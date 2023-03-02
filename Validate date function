@@ -1,0 +1,37 @@
+# importing datetime module
+import datetime
+
+
+def validate_date(txt_date):
+
+  # giving the date format
+  date_format = '%Y-%m-%d'
+
+  # using try-except blocks for handling the exceptions
+  try:
+
+    # formatting the date using strptime() function
+    dateObject = datetime.datetime.strptime(date_string, date_format)
+    print(dateObject)
+    return True 
+  # If the date validation goes wrong
+  except ValueError:
+
+    # printing the appropriate text if ValueError occurs
+    print("Incorrect data format, should be YYYY-MM-DD")
+    return False 
+
+# Main 
+
+# input date
+date_string = input('please enter a date in format YYYY-MM-DD')
+
+
+
+valdate = validate_date(date_string)
+
+if valdate  == True:
+  print("valid date")
+else: 
+  print("invalid date")
+
